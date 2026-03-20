@@ -1,34 +1,111 @@
-from dotenv import load_dotenv
-load_dotenv()
+# 🤖 Multi-Mode AI Chatbot (Funny | Serious | Sad)
 
-from langchain_mistralai import ChatMistralAI
-from langchain_core.messages import AIMessage,SystemMessage,HumanMessage
+A simple command-line AI chatbot built using **LangChain** and **Mistral AI**, where users can interact with different personalities of the bot.
 
-model = ChatMistralAI(model="mistral-small-2506", temperature=0.9)
-print("Choose your AI Mode")
-print("1. Funny AI Agent")
-print("2. Serious AI Agent")
-print("3.Sad AI Agent")
-choice=int(input("Enter your choice: "))
-if choice==1:
-    mode=" You are a funny AI agent.You respond with humor and jokes"
- 
-elif choice==2:
-    mode=" You are a serious AI agent.You respond with seriousness and professionalism"
-elif choice==3:
-    mode=" You are a sad AI agent.You respond with sadness and empathy"
+## 🚀 Features
 
+* 🎭 Multiple AI modes:
 
-messages=[
-    SystemMessage(content=mode)
-]
-print("-------Welcome type 0 to exit the chat------- ")
-while True:
-    prompt=input("You:")
-    messages.append(HumanMessage(content=prompt))
-    if prompt=="0":
-        break
-    response=model.invoke(messages)
-    messages.append(AIMessage(content=response.content))
-    print("Bot:", response.content)
-print(messages)
+  * Funny AI Agent 😂
+  * Serious AI Agent 🧑‍💼
+  * Sad AI Agent 😔
+* 💬 Interactive CLI-based chat
+* 🧠 Powered by Mistral LLM via LangChain
+* 🔄 Maintains conversation history
+
+---
+
+## 🛠️ Tech Stack
+
+* Python
+* LangChain
+* Mistral AI API
+* dotenv (for environment variables)
+
+---
+
+## 📂 Project Structure
+
+```
+├── chatbot.py
+├── .env
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the repository
+
+```
+git clone https://github.com/your-username/multi-mode-chatbot.git
+cd multi-mode-chatbot
+```
+
+### 2. Create virtual environment (recommended)
+
+```
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
+
+### 3. Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+### 4. Add API Key
+
+Create a `.env` file and add:
+
+```
+MISTRAL_API_KEY=your_api_key_here
+```
+
+---
+
+## ▶️ Run the Chatbot
+
+```
+python chatbot.py
+```
+
+---
+
+## 🎮 Usage
+
+* Choose the AI mode:
+
+  * `1` → Funny
+  * `2` → Serious
+  * `3` → Sad
+* Start chatting
+* Type `0` to exit
+
+---
+
+## 📸 Example
+
+```
+Choose your AI Mode
+1. Funny AI Agent
+2. Serious AI Agent
+3. Sad AI Agent
+
+Enter your choice: 1
+You: Hello
+Bot: Why did the AI cross the road? To optimize the chicken! 🤖😂
+```
+
+## 🤝 Contributing
+
+Feel free to fork this repo and improve it!
+
+---
+
+## 📜 License
+
+This project is open-source and free to use.
