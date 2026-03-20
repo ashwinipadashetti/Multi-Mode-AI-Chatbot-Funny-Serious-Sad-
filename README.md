@@ -102,15 +102,6 @@ Bot: Why did the AI cross the road? To optimize the chicken! 🤖😂
 
 ---
 
-## 🌟 Future Improvements
-
-* Add Streamlit UI 🌐
-* Add more personalities 🎭
-* Deploy as a web app 🚀
-* Add memory optimization
-
----
-
 ## 🤝 Contributing
 
 Feel free to fork this repo and improve it!
